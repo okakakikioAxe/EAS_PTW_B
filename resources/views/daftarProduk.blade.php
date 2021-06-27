@@ -33,7 +33,11 @@
                 <td class="w-25"><img src="{{ asset('gambar/produk/'.$barang->gambar_1) }}" alt="" style="width:20%;height:auto;"></td>
                 <td>{{ $barang->nama_barang }}</td>
                 <td>{{ $barang->stok }}</td>
-                <td>@mdo</td>
+                <td>
+                    <a class="mx-2" href="#"><i class="far fa-eye" style="color:blue;"></i></a>
+                    <a class="mx-2" href="#"><i class="fas fa-pen" style="color:orange;"></i></a>
+                    <a class="mx-2" href="#"><i class="fas fa-trash" style="color:red;"></i></a>
+                </td>
             </tr>
         @endforeach
     </tbody>
