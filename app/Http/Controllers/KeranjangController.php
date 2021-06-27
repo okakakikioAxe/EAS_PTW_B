@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Keranjang;
+use App\Models\Transaksi;
 
 class KeranjangController extends Controller
 {
@@ -47,17 +48,34 @@ class KeranjangController extends Controller
         $variasi = $request->variasi;
         $id_user = session()->get('id');
 
-        $cek_keranjang = Keranjang::where(['id_barang'=> $id_barang, 'id_user' => $id_user , 'varian' => $variasi])->first();
+
+
+        $cek_keranjang = DB::table('keranjang')
+            ->join('transaksi', 'id_transaksi', '=', 'transaksi.id')
+            ->select('keranjang.*','transaksi.*')
+            ->where('keranjang.id_user' ,'=', $id_user)
+            ->where( 'transaksi.bukti_transfer' ,'=' , null)
+            ->first();
+
+        
+
+        //$cek_keranjang = Keranjang::where(['id_barang'=> $id_barang, 'id_user' => $id_user , 'varian' => $variasi])->first();
         if($cek_keranjang == null){
+            $transaksi = new Transaksi;
+            $transaksi->id_user = $id_user;
+            $transaksi->save();
+        }
+            $data_transaksi =  Transaksi::where(['id_user' => $id_user,'bukti_transfer' => null])->first();
+            $id_transaksi = $data_transaksi->id;
+
             $keranjang = new Keranjang;
             $keranjang->id_barang = $id_barang;
             $keranjang->id_user = $id_user;
+            $keranjang->id_transaksi = $id_transaksi;
             $keranjang->varian = $variasi;
             $keranjang->jumlah = $jumlah;
             $keranjang->save();
-        }
-       
-
+        
         return redirect()->route('keranjang.index');
     }
 
