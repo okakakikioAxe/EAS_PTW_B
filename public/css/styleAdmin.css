@@ -1,0 +1,28 @@
+.barang{
+    height:250px;
+    background-color: rgb(247, 247, 247);
+}
+.gambar-baju{
+    width: 50%;
+    height: auto;
+}
+.label-baju{
+    color: rgb(226, 58, 58);
+}
+.gambar-laporan{
+    width: 110%;
+    height: auto;
+}
+
+.gambar-transaksi{
+    width: 110%;
+    height: auto;
+}
+.notif{
+    background-color: orangered;
+    font-size: 20px;
+    left: 88%;
+}
+p{
+    color: black;
+}

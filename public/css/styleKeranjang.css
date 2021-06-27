@@ -1,0 +1,34 @@
+.card p{
+    margin-top: -10px;
+    margin-bottom: 1px;
+}
+.row .card:hover{
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+    transform: scale(1.02);
+}
+/* row keranjang */
+.row-keranjang {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 11px;
+}
+.row-custom {
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0px;
+    margin-bottom: 14px;
+}
+.row-checkout {
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+/* button custom */
+.button-custom {
+    padding: 10px;
+}
+
+

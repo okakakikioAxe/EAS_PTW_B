@@ -1,0 +1,23 @@
+h4 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid rgb(204, 204, 204); 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+ h4 span { 
+     background:#fff; 
+     padding:0 10px;
+     font-size: 13px;
+     color: rgb(204, 204, 204);
+ }
+
+ .link-daftar{
+     text-decoration: none;
+     color: orange;
+ }
+
+ .link-daftar :hover{
+     color: orange;
+ }
