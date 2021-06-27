@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Barang;
+use App\Models\Transaksi;
 
 class PageController extends Controller
 {
@@ -57,5 +58,11 @@ class PageController extends Controller
     public function laporan()
     {
         return view('laporan');
+    }
+
+    public function transaksi()
+    {
+        $transaksi = transaksi::where('status','belum diterima')->get();
+        return view('transaksi', ['transaksi' => $transaksi]);
     }
 }
