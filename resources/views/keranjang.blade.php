@@ -103,6 +103,12 @@
                   @csrf
                   @method('POST')
                   <input type="hidden" name="total_harga" id="total_harga" value="">
+                  @foreach ($keranjang as $k)
+                    @if ($loop->first)
+                      <input type="hidden" name="id_transaksi" id="id_transaksi" value="{{ $k->id_transaksi }}">
+                    @endif
+                  @endforeach
+                  
                   <button class="btn btn-warning btn-lg w-100" type="submit">CheckOut</button>
                 </form>
             </div>

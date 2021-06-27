@@ -130,7 +130,8 @@ class KeranjangController extends Controller
 
     public function form_checkout(Request $request){
         $total_harga = $request->total_harga;
+        $id_transaksi = $request->id_transaksi;
         //$total_harga = array('total_harga'=>$total_harga);
-        return view('checkout',['total_harga'=>$total_harga]);
+        return view('checkout',['total_harga'=>$total_harga,'id_transaksi'=>$id_transaksi]);
     }
 }
