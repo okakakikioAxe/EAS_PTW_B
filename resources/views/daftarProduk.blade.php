@@ -10,31 +10,24 @@
 <div class="container">
     <table class="table">
     <thead>
-        <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <tr class="text-center" >
+        <th scope="col" style="width:10%;">ID Produk</th>
+        <th scope="col" style="width:10%;">Gambar</th>
+        <th scope="col" style="width:40%;">Nama</th>
+        <th scope="col" style="width:10%;">Tersedia</th>
+        <th scope="col" style="width:30%;">Handle</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        </tr>
-        <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        </tr>
-        <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-        </tr>
+        @foreach ($barang as $barang)
+            <tr class="text-center">
+                <td>{{ $barang->id }}</td>
+                <td class="w-25"><img src="{{ asset('gambar/produk/'.$barang->gambar_1) }}" alt="" style="width:20%;height:auto;"></td>
+                <td>{{ $barang->nama_barang }}</td>
+                <td>{{ $barang->stok }}</td>
+                <td>@mdo</td>
+            </tr>
+        @endforeach
     </tbody>
     </table>
 </div>

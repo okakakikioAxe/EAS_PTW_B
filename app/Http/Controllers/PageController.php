@@ -50,6 +50,7 @@ class PageController extends Controller
 
     public function daftar_produk()
     {
-        return view ('daftarProduk');
+        $produk = Barang::all();
+        return view ('daftarProduk',['barang' => $produk]);
     }
 }
