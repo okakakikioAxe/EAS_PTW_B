@@ -50,8 +50,6 @@
       <br>
       <br>
       <br>
-      <br>
-      <br>
       
       @yield('konten')
       

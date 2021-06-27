@@ -8,6 +8,14 @@
 
 @section('konten')
 <div class="container">
+    <h3 class="text-center">DAFTAR PRODUK</h3>
+    <a class="btn btn-primary float-end" href="#" role="button">Tambah +</a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
     <table class="table">
     <thead>
         <tr class="text-center" >
