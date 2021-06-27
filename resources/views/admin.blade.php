@@ -41,7 +41,7 @@
             <div class=" col-lg-7">
                 <div class="row">
                     <div class="col">
-                        <a class="btn btn-outline-warning border border-4 border-warning w-100 laporan" href="#">
+                        <a class="btn btn-outline-warning border border-4 border-warning w-100 laporan" href="{{ route('admin.laporan') }}">
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="col position-relative">
                     <!-- <span class="position-absolute top-0 translate-middle text-center badge rounded-pill notif">+99</span>  -->
-                        <a class="btn btn-outline-warning border border-4 border-warning w-100 transaksi" href="#">
+                        <a class="btn btn-outline-warning border border-4 border-warning w-100 transaksi" href="{{ route('admin.transaksi') }}">
                             <div class="container">
                                 <div class="row">
                                     <div class="col">

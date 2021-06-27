@@ -53,4 +53,9 @@ class PageController extends Controller
         $produk = Barang::all();
         return view ('daftarProduk',['barang' => $produk]);
     }
+
+    public function laporan()
+    {
+        return view('laporan');
+    }
 }

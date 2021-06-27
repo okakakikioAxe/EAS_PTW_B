@@ -37,6 +37,10 @@ Route::post('/barang/cari',[PageController::class, 'cari'])->name('cari');
 
 Route::get('/admin/daftar_produk',[PageController::class, 'daftar_produk'])->name('admin.produk');
 
+Route::get('/admin/laporan',[PageController::class, 'laporan'])->name('admin.laporan');
+
+Route::get('/admin/transaksi',[PageController::class, 'transaksi'])->name('admin.transaksi');
+
 Route::group(['middleware' => ['auth']], function(){
     Route::group(['middleware' => ['cek_login:admin']], function(){
         Route::get('/admin',[PageController::class, 'admin'])->name('admin');
