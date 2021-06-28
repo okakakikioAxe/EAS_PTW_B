@@ -14,10 +14,6 @@
         <div class="col-2 col-md">
                 <a href="{{ route('user.index') }}" class="d-block" style="padding-bottom:5px;font-size : 18px; color: black;"><i class="far fa-user mx-2"></i><strong>Akun Saya</strong> </a>
                 <hr class="sidebar-divider btn-dark ">
-                <a href="{{ route('user.index') }}" class="d-block" style="padding-bottom:5px;font-size : 18px; color: black;"><i class="fas fa-envelope-open-text mx-2"></i><strong>Pesanan Saya</strong> </a>
-                <hr class="sidebar-divider btn-dark ">
-                <a href="{{ route('user.index') }}" class="d-block" style="padding-bottom:5px;font-size : 18px; color: black;"><i class="far fa-bell mx-2"></i><strong>Notifikasi</strong> </a>
-                <hr class="sidebar-divider btn-dark ">
                 <a href="{{ route('logout') }}" class="d-block" style="padding-bottom:5px;font-size : 18px; color: black;"><i class="fas fa-sign-out-alt mx-2"></i><strong>Logout</strong> </a>
         </div>
         <div class="col-9" style="background-color:white;">

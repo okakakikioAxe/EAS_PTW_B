@@ -163,7 +163,7 @@
 
                             <div class="btn-produk mt-4">
                                 <button class="btn btn-primary me-2 btn-custom" type="submit" ><i class="fas fa-shopping-cart fs-6 me-2"></i> Masukkan Keranjang</button>
-                                <a href="#" class="btn btn-danger btn-custom" >Beli Sekarang</a>
+                                
                             </div>
                         </form>
 

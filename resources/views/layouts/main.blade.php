@@ -31,9 +31,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Hubungi Kami</a>
-              </li>
+              
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="#">Bantuan</a>
               </li>
@@ -46,7 +44,6 @@
             </form>
             <div style="width: 30px;"></div>
                   <a href="{{ route('keranjang.index') }}" class="fas fa-cart-plus mx-2 mx-2" ></a>
-                  <a href="www.google.com" class="fas fa-bell mx-2 me-2"><span class="dot position-absolute rounded-circle" style="visibility: @yield('notif');"></span></a>
                   <a class="nav-link" aria-current="page" href="{{ route('user.index') }}" style="font-size : 18px; color: black;"><i class="fas fa-user-circle mx-2"></i>{{ session()->get('username') }}</a>
           </div>
         </div>

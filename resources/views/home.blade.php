@@ -188,8 +188,10 @@
                         @endfor
                         
                         <br>
-                        <a href="{{ route('barang.show' , $barang->id) }}" class="btn btn-primary">Detail</a>
-                        <a href="#" class="btn btn-danger">@currency($barang->harga)</a>
+                        @currency($barang->harga)
+                        <br>
+                        <a href="{{ route('barang.show' , $barang->id) }}" class="btn btn-primary w-100">Detail</a>
+                        
                     </div>
                   </div>
                 </div>
