@@ -18,7 +18,15 @@ class UserController extends Controller
     {
         $id = session()->get('id');
         $user = User::where('id',$id)->get();
-        return view ('profilUser', ['user' => $user]);
+
+        if(session()->get('level') == 'pembeli'){
+            return view ('profilUser', ['user' => $user]);
+        }
+
+        if(session()->get('level') == 'admin'){
+            return view ('profilAdmin', ['user' => $user]);
+        }
+        
     }
 
     /**

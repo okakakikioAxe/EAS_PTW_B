@@ -25,10 +25,12 @@ class AuthController extends Controller
                 $request->session()->put('username',$user->username);
                 $request->session()->put('nama',$user->nama_user);
                 $request->session()->put('id',$user->id);
+                $request->session()->put('level',$user->level);
                 return redirect()->intended('/admin');
             } elseif ($user->level == 'pembeli') {
                 $request->session()->put('username',$user->username);
                 $request->session()->put('id',$user->id);
+                $request->session()->put('level',$user->level);
                 return redirect()->intended('/home');
             }
             return redirect()->intended('/form/login');

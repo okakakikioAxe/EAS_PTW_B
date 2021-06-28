@@ -37,7 +37,7 @@
             <div class="me-auto"></div>
             <ul class="nav navbar-nav me-5">
               <li class="nav-item">
-                  <a class="nav-link " aria-current="page" href="#">
+                  <a class="nav-link " aria-current="page" href="{{ route('user.index') }}">
                     <i class="fas fa-user mx-2"></i>{{ session()->get('username') }}
                   </a>
               </li>
