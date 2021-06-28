@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Barang;
 use App\Models\Transaksi;
+use App\Models\User;
 
 class PageController extends Controller
 {
@@ -60,9 +61,9 @@ class PageController extends Controller
         return view('laporan');
     }
 
-    public function transaksi()
+    public function data_admin()
     {
-        $transaksi = transaksi::where('status','belum diterima')->get();
-        return view('transaksi', ['transaksi' => $transaksi]);
+        $user = User::where('level','admin')->get();
+        return view('dataAdmin', ['user' => $user]);
     }
 }

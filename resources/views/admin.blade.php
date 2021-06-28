@@ -56,14 +56,14 @@
                     </div>
                     <div class="col position-relative">
                     <!-- <span class="position-absolute top-0 translate-middle text-center badge rounded-pill notif">+99</span>  -->
-                        <a class="btn btn-outline-warning border border-4 border-warning w-100 transaksi" href="{{ route('admin.transaksi') }}">
+                        <a class="btn btn-outline-warning border border-4 border-warning w-100 transaksi" href="{{ route('admin.data') }}">
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        <img src="{{ asset('gambar/Admin/transaksi.png') }}" class="rounded float-start gambar-transaksi" alt="...">
+                                        <img src="{{ asset('gambar/Admin/user.png') }}" class="rounded float-start gambar-transaksi" alt="...">
                                     </div>
                                     <div class="col-8">
-                                        <h4 class=" text-center position-relative top-50 start-50 translate-middle label-baju">Transaksi</h4>
+                                        <h4 class=" text-center position-relative top-50 start-50 translate-middle label-baju">Data Admin</h4>
                                     </div>
                                 </div>
                             </div>
