@@ -45,7 +45,7 @@
 
             <div class="col mt-3">
                 <h6 class="mb-2 text-muted"> Produk</h6>
-                <h5 class="mt-2">PULLOVER HOODIE CHAMPION BIG C</h5>
+                <h5 class="mt-2">{{ $k->nama_barang }}</h5>
                 <h6 class="text-muted mb-3">@currency($k->harga)</h6>
                 <input type="hidden" id="harga{{ $k->id}}" value="{{ $k->harga}}"></input>
             </div>

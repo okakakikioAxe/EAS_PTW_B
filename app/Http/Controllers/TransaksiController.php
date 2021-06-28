@@ -29,7 +29,7 @@ class TransaksiController extends Controller
         
         $keranjang = DB::table('keranjang')
             ->join('barang', 'id_barang', '=', 'barang.id')
-            ->select('barang.stok','keranjang.id','keranjang.id_barang','keranjang.jumlah')
+            ->select('barang.stok','barang.terjual','barang.penilaian','keranjang.id','keranjang.id_barang','keranjang.jumlah')
             ->where('keranjang.id_user', $id)
             ->get();
 
@@ -37,7 +37,11 @@ class TransaksiController extends Controller
             $jumlah = $produk->jumlah;
             $id_produk = $produk->id_barang;
 
-            Barang::where('id',$id_produk)->decrement('stok',$jumlah);
+            Barang::where('id',$id_produk)->update([
+                'stok' => DB::raw('stok - '.$jumlah),
+                'terjual' => DB::raw('terjual + '.$jumlah),
+                'penilaian' => DB::raw('penilaian + 1'),
+            ]);;
             Keranjang::where('id_barang', $id_produk)->where('id_user',$id)->delete();
         }
 

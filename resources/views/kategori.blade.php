@@ -28,7 +28,7 @@
             </div>
             <div class="col-10 bg-white">
                 @foreach ($barang as $barang)
-                    <div class="card m-2 p-2 w-25 kartu_produk">
+                    <div class="card m-2 p-2 w-25 kartu_produk d-inline-block">
                         <img src="{{ asset('gambar/produk/' . $barang->gambar_1) }}" class="card-img-top" >
                         <div class="card-body bg-light">
                             <h5 class="card-title text-truncate">{{ $barang->nama_barang }}</h5>
