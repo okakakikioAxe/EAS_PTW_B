@@ -14,12 +14,11 @@ class CreateKeranjangTable extends Migration
     public function up()
     {
         Schema::create('keranjang', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('id_user')->unsigned();
             $table->integer('id_barang')->unsigned();
             $table->string('varian');
-            $table->bigInteger('id_transaksi')->unsigned();
             $table->integer('jumlah');
-            $table->integer('total');
             $table->timestamps();
         });
     }
