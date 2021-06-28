@@ -39,6 +39,8 @@ Route::get('/admin/daftar_produk',[PageController::class, 'daftar_produk'])->nam
 
 Route::get('/admin/laporan',[PageController::class, 'laporan'])->name('admin.laporan');
 
+Route::post('/admin/cari/laporan',[PageController::class, 'cari_laporan'])->name('admin.cari_laporan');
+
 Route::get('/admin/data',[PageController::class, 'data_admin'])->name('admin.data');
 
 Route::get('/admin/detail_barang',[PageController::class, 'detail_barang'])->name('admin.detail_barang');

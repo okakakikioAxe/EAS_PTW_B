@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Barang;
 use App\Models\Transaksi;
@@ -58,8 +59,43 @@ class PageController extends Controller
 
     public function laporan()
     {
-        return view('laporan');
+        $data = DB::table('transaksi')
+            ->select(DB::raw("SUM(`total`) AS `total`" ),DB::raw("DATE_FORMAT(`created_at`,'%Y-%m-%d') AS `tanggal`"))
+            ->whereMonth('created_at', '6')
+            ->whereYear('created_at', '2021')
+            ->groupBy(DB::raw("DATE_FORMAT( `created_at`, '%Y-%m-%d')"))
+            ->get();
+        $data2 = DB::table('transaksi')
+            ->select(DB::raw("SUM(`total`) AS `total`" ),DB::raw("DATE_FORMAT(`created_at`,'%Y-%m') AS `tanggal`"))
+            ->whereMonth('created_at', '6')
+            ->whereYear('created_at', '2021')
+            ->groupBy(DB::raw("DATE_FORMAT( `created_at`, '%Y-%m')"))
+            ->get();
+        return view('laporan',['data' => $data, 'data2' => $data2]);
     }
+
+
+    public function cari_laporan(Request $request)
+    {
+        $tanggal = $request->bulan;
+        $bulan = substr($tanggal,-2);
+        $tahun = substr($tanggal,0,4);
+        $data = DB::table('transaksi')
+            ->select(DB::raw("SUM(`total`) AS `total`" ),DB::raw("DATE_FORMAT(`created_at`,'%Y-%m-%d') AS `tanggal`"))
+            ->whereMonth('created_at', $bulan)
+            ->whereYear('created_at', $tahun)
+            ->groupBy(DB::raw("DATE_FORMAT( `created_at`, '%Y-%m-%d')"))
+            ->get();
+
+        $data2 = DB::table('transaksi')
+            ->select(DB::raw("SUM(`total`) AS `total`" ),DB::raw("DATE_FORMAT(`created_at`,'%Y-%m') AS `tanggal`"))
+            ->whereMonth('created_at', $bulan)
+            ->whereYear('created_at', $tahun)
+            ->groupBy(DB::raw("DATE_FORMAT( `created_at`, '%Y-%m')"))
+            ->get();
+        return view('laporan',['data' => $data, 'data2' => $data2]);
+    }
+
 
     public function data_admin()
     {
