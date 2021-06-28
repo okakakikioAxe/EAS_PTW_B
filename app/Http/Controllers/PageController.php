@@ -316,4 +316,9 @@ class PageController extends Controller
     {
         return view('bantuanPembeli');
     }
+
+    public function admin_bantuan()
+    {
+        return view('bantuanAdmin');
+    }
 }

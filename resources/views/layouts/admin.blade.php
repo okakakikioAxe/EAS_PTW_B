@@ -30,7 +30,7 @@
           <div class="collapse navbar-collapse position-relative" id="navbarSupportedContent">
             <ul class="nav navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Bantuan</a>
+                <a class="nav-link" aria-current="page" href="{{ route('admin.bantuan') }}">Bantuan</a>
               </li>
             </ul>
             

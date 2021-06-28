@@ -65,6 +65,8 @@ Route::get('/admin/delete_admin/{id}',[PageController::class, 'delete_admin'])->
 
 Route::get('/bantuan',[PageController::class, 'bantuan'])->name('bantuan');
 
+Route::get('/admin/bantuan',[PageController::class, 'admin_bantuan'])->name('admin.bantuan');
+
 Route::PUT('/admin/simpan_edit_barang/{id}',[PageController::class, 'simpan_edit_barang'])->name('admin.simpan_edit_barang');
 
 Route::group(['middleware' => ['auth']], function(){

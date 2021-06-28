@@ -28,17 +28,17 @@
                     <h3 class="text-center">Menambah barang ke keranjang</h3>
                     <br>
                     <p class="mb-3"> 1. Pilih barang yang anda inginkan</p>
-                    <img src="{{ asset('gambar/bantuan/pilih barang.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/pilih barang.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                     <br>
                     <br>
                     <p class="mb-3">2. Pilih 'Masukkan keranjang'</p>
-                    <img src="{{ asset('gambar/bantuan/tambah ke keranjang.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/tambah ke keranjang.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                     <br>
                     <br>
                     <p class="mb-3">3. Anda akan diarahkan ke halaman keranjang</p>
-                    <img src="{{ asset('gambar/bantuan/keranjang.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/keranjang.png') }}" alt="" style="width:100%;height:auto;">
                     
                 </div>
 
@@ -50,7 +50,7 @@
                     <h3 class="text-center">Menambah jumlah barang di keranjang</h3>
                     <br>
                     <p class="mb-3"> 1. Tekan tombol  ' + ' pada produk yang ingin dibeli</p>
-                    <img src="{{ asset('gambar/bantuan/tambah barang.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/tambah barang.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                     <br>
                     <p class="mb-3"> 2. Tekan tombol  ' simpan '</p>
@@ -62,7 +62,7 @@
                     <h3 class="text-center">Menambah jumlah barang di keranjang</h3>
                     <br>
                     <p class="mb-3"> 1. Tekan tombol dengan lingkaran merah</p>
-                    <img src="{{ asset('gambar/bantuan/hapus barang.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/hapus barang.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                     <br>
                     <p class="mb-3"> 2. Barang akan hilang dari keranjang</p>
@@ -74,12 +74,12 @@
                     <h3 class="text-center">Checkout</h3>
                     <br>
                     <p class="mb-3"> 1. Tekan checkout</p>
-                    <img src="{{ asset('gambar/bantuan/checkout.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/checkout.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                     <br>
                     <br>
                     <p class="mb-3"> 2. Upload gambar bukti pembayaran</p>
-                    <img src="{{ asset('gambar/bantuan/form checkout.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/form checkout.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                     <br>
                     <br>
@@ -92,17 +92,17 @@
                     <h3 class="text-center">Edit Profil</h3>
                     <br>
                     <p class="mb-3"> 1. Tekan profil</p>
-                    <img src="{{ asset('gambar/bantuan/tombol profil.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/tombol profil.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                     <br>
                     <br>
                     <p class="mb-3"> 2. Pilih 'Edit Profil'</p>
-                    <img src="{{ asset('gambar/bantuan/profil.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/profil.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                     <br>
                     <br>
                     <p class="mb-3"> 3. Isi semua form yang ingin diedit</p>
-                    <img src="{{ asset('gambar/bantuan/form edit profil.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/form edit profil.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                     <br>
                     <br>
@@ -116,12 +116,12 @@
                     <h3 class="text-center">Logout</h3>
                     <br>
                     <p class="mb-3"> 1. Tekan profil</p>
-                    <img src="{{ asset('gambar/bantuan/tombol profil.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/tombol profil.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                     <br>
                     <br>
                     <p class="mb-3"> 2. Pilih 'Logout'</p>
-                    <img src="{{ asset('gambar/bantuan/logout.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/logout.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                 </div>
 
@@ -131,7 +131,7 @@
                     <h3 class="text-center">Mencari barang</h3>
                     <br>
                     <p class="mb-3"> 1. Isi nama barang yang ingin anda cari</p>
-                    <img src="{{ asset('gambar/bantuan/cari barang.png') }}" alt="" style="width:60%;height:auto;">
+                    <img src="{{ asset('gambar/bantuan/cari barang.png') }}" alt="" style="width:100%;height:auto;">
                     <br>
                     <br>
                     <br>
