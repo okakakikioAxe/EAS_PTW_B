@@ -310,4 +310,9 @@ class PageController extends Controller
         return redirect()->route('admin.produk')->with('message', 'Produk berhasil dihapus')->with('message2','alert-success');
         //return view('lihatProduk',['barang' => $barang]);
     }
+
+    public function bantuan()
+    {
+        return view('bantuanPembeli');
+    }
 }

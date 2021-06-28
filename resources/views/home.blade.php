@@ -7,8 +7,6 @@
 @section('title','home | fesien')
 
 
-@section('notif','hidden')
-
 @section('konten')
       <br>
       <br>

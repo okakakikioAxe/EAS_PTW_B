@@ -33,7 +33,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Bantuan</a>
+                <a class="nav-link" aria-current="page" href="{{ route('bantuan') }}">Bantuan</a>
               </li>
             </ul>
             <form action="{{ route('cari') }}" class="d-flex" method="post">
