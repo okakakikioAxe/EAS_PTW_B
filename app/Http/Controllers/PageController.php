@@ -163,13 +163,15 @@ class PageController extends Controller
         return view('detailAdmin',['user'=>$user]);
     }
 
+    
+
     public function delete_admin($id){
         $id_user = session()->get('id');
         //$user = User::where('id',$id)->get();
         if($id == $id_user){
             return redirect()->route('admin.data')->with('message', 'Gagal menghapus karena akun sedang dipakai')->with('message2','alert-danger');
-            
         }
+        User::where('id',$id)->delete();
         return redirect()->route('admin.data')->with('message', 'Data berhasil dihapus')->with('message2','alert-success');
     }
 
@@ -177,6 +179,93 @@ class PageController extends Controller
     {
         $barang = Barang::where('id',$id)->get();
         return view('editBarang',['barang' => $barang]);
+    }
+
+    public function form_tambah_barang()
+    {
+        return view('tambahProduk');
+    }
+
+    public function tambah_barang(Request $request)
+    {
+        $nama = $request->nama;
+        $harga =$request->harga;
+        $kategori = $request->kategori;
+        $stok = $request->stok;
+        $merk = $request->merk;
+        $deskripsi_singkat = $request->deskripsi_singkat;
+        $deskripsi = $request->deskripsi;
+        $k_varian = $request->keterangan_varian;
+        $k_gambar = $request->keterangan_gambar;
+
+        $v1 = $request->varian_1;
+        $v2 = $request->varian_2;
+        $v3 = $request->varian_3;
+        $v4 = $request->varian_4;
+        $v5 = $request->varian_5;
+
+        $barang = new Barang;
+        $barang->nama_barang = $nama;
+        $barang->harga = $harga;
+        $barang->rating = 5;
+        $barang->id_kategori = $kategori;
+        $barang->terjual = 0;
+        $barang->penilaian = 0;
+        $barang->stok = $stok;
+        $barang->merk = $merk;
+        $barang->deskripsi = $deskripsi;
+        $barang->deskripsi_singkat = $deskripsi_singkat;
+        $barang->keterangan_varian = $k_varian;
+        $barang->keterangan_gambar = $k_gambar;
+
+        $barang->varian_1 = $v1;
+        $barang->varian_2 = $v2;
+        $barang->varian_3 = $v3;
+        $barang->varian_4 = $v4;
+        $barang->varian_5 = $v5;
+        
+        if($request->gambar_1 != null){
+        $photo = $request->file('gambar_1')->getClientOriginalName();
+        $photo = rand(1,100000).$photo;
+        $destination = base_path() . '/public/gambar/produk';
+        $request->file('gambar_1')->move($destination, $photo);
+        $barang->gambar_1 = $photo;
+        }
+
+        if($request->gambar_2 != null){
+        $photo = $request->file('gambar_2')->getClientOriginalName();
+        $photo = rand(1,100000).$photo;
+        $destination = base_path() . '/public/gambar/produk';
+        $request->file('gambar_2')->move($destination, $photo);
+        $barang->gambar_2 = $photo;
+        }
+
+        if($request->gambar_3 != null){
+            $photo = $request->file('gambar_3')->getClientOriginalName();
+            $photo = rand(1,100000).$photo;
+            $destination = base_path() . '/public/gambar/produk';
+            $request->file('gambar_3')->move($destination, $photo);
+            $barang->gambar_3 = $photo;
+        }
+
+        if($request->gambar_4 != null){
+            $photo = $request->file('gambar_4')->getClientOriginalName();
+            $photo = rand(1,100000).$photo;
+            $destination = base_path() . '/public/gambar/produk';
+            $request->file('gambar_4')->move($destination, $photo);
+            $barang->gambar_4 = $photo;
+        }
+
+        if($request->gambar_5 != null){
+            $photo = $request->file('gambar_5')->getClientOriginalName();
+            $photo = rand(1,100000).$photo;
+            $destination = base_path() . '/public/gambar/produk';
+            $request->file('gambar_5')->move($destination, $photo);
+            $barang->gambar_5 = $photo;
+        }
+        $barang->save();
+
+        return redirect()->route('admin.produk');
     }
 
     public function simpan_edit_barang(Request $request,$id)

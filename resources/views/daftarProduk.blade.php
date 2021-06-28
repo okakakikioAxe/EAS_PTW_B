@@ -9,7 +9,7 @@
 @section('konten')
 <div class="container">
     <h3 class="text-center">DAFTAR PRODUK</h3>
-    <a class="btn btn-primary float-end" href="#" role="button">Tambah +</a>
+    <a class="btn btn-primary float-end" href="{{ route('admin.form_tambah_barang') }}" role="button">Tambah +</a>
 </div>
 <br>
 <br>

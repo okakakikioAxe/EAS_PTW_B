@@ -49,6 +49,10 @@ Route::get('/admin/edit_barang/{id}',[PageController::class, 'edit_barang'])->na
 
 Route::get('/admin/lihat_barang/{id}',[PageController::class, 'lihat_barang'])->name('admin.lihat_barang');
 
+Route::get('/admin/form/tambah_barang',[PageController::class, 'form_tambah_barang'])->name('admin.form_tambah_barang');
+
+Route::post('/admin/tambah_barang',[PageController::class, 'tambah_barang'])->name('admin.tambah_barang');
+
 Route::get('/admin/form/tambah_admin',[PageController::class, 'form_tambah_admin'])->name('admin.form_tambah_admin');
 
 Route::post('/admin/tambah_admin',[PageController::class, 'tambah_admin'])->name('admin.tambah_admin');
