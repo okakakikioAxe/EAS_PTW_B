@@ -5,6 +5,7 @@
 @section('konten')
 <br>
     <div class="container">
+    <a class="btn btn-success text-right" href="{{ route('admin.data') }}" role="button">Kembali</a>
         <div class="row">
             <div class="col"></div>
             <div class="col-5">

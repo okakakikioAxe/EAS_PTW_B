@@ -4,6 +4,7 @@
 
 @section('konten')
     <div class="container">
+    <a class="btn btn-success text-right" href="{{ route('admin.data') }}" role="button">Kembali</a>
     <h4 class="text-center">DETAIL ADMIN</h4>
     <br>
         @foreach ($user as $u)

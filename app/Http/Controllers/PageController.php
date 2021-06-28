@@ -163,6 +163,16 @@ class PageController extends Controller
         return view('detailAdmin',['user'=>$user]);
     }
 
+    public function delete_admin($id){
+        $id_user = session()->get('id');
+        //$user = User::where('id',$id)->get();
+        if($id == $id_user){
+            return redirect()->route('admin.data')->with('message', 'Gagal menghapus karena akun sedang dipakai')->with('message2','alert-danger');
+            
+        }
+        return redirect()->route('admin.data')->with('message', 'Data berhasil dihapus')->with('message2','alert-success');
+    }
+
     public function edit_barang($id)
     {
         $barang = Barang::where('id',$id)->get();
