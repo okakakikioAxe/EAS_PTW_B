@@ -158,6 +158,11 @@ class PageController extends Controller
         //return redirect()->route('admin.data');
     }
 
+    public function detail_admin($id){
+        $user = User::where('id',$id)->get();
+        return view('detailAdmin',['user'=>$user]);
+    }
+
     public function edit_barang($id)
     {
         $barang = Barang::where('id',$id)->get();

@@ -27,7 +27,7 @@
                 <td><?php echo $i ?></td>
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->nama_user }}</td>
-                <td><a class="mx-2" href="#"><i class="far fa-eye" style="color:blue;"></i></a></td>
+                <td><a class="mx-2" href="{{ route('admin.detail_admin', $user->id) }}"><i class="far fa-eye" style="color:blue;"></i></a></td>
             </tr>
          @endforeach
     </tbody>
