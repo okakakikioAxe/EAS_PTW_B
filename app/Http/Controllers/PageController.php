@@ -100,4 +100,10 @@ class PageController extends Controller
         //$barang = Barang::where('id',$id)->get();
         return redirect()->route('admin.produk');
     }
+
+    public function lihat_barang($id)
+    {
+        $barang = Barang::where('id',$id)->get();
+        return view('lihatProduk',['barang' => $barang]);
+    }
 }

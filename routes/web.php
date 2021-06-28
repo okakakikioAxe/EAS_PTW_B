@@ -45,6 +45,8 @@ Route::get('/admin/detail_barang',[PageController::class, 'detail_barang'])->nam
 
 Route::get('/admin/edit_barang/{id}',[PageController::class, 'edit_barang'])->name('admin.edit_barang');
 
+Route::get('/admin/lihat_barang/{id}',[PageController::class, 'lihat_barang'])->name('admin.lihat_barang');
+
 Route::PUT('/admin/simpan_edit_barang/{id}',[PageController::class, 'simpan_edit_barang'])->name('admin.simpan_edit_barang');
 
 Route::group(['middleware' => ['auth']], function(){
