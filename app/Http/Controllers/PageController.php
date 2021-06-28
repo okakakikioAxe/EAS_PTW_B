@@ -49,7 +49,8 @@ class PageController extends Controller
 
     public function cari(Request $request){
         $nama = $request->nama_barang;
-        $barang = Barang::where('nama' );
+        $barang = Barang::where('nama_barang', 'like', '%' . $nama . '%')->get();
+        return view('kategori',['barang' => $barang]);
     }
 
     public function daftar_produk()
