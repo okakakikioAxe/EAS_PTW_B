@@ -66,4 +66,38 @@ class PageController extends Controller
         $user = User::where('level','admin')->get();
         return view('dataAdmin', ['user' => $user]);
     }
+
+    public function edit_barang($id)
+    {
+        $barang = Barang::where('id',$id)->get();
+        return view('editBarang',['barang' => $barang]);
+    }
+
+    public function simpan_edit_barang(Request $request,$id)
+    {
+        $nama = $request->nama;
+        $harga = $request->harga;
+        $stok = $request->stok;
+        $merk = $request->merk;
+        $d_singkat = $request->deskripsi_singkat;
+        $d = $request->deskripsi;
+        $k_gambar = $request->keterangan_gambar;
+        $k_varian = $request->keterangan_varian;
+
+        $barang = Barang::find($id);
+
+        $barang->nama_barang = $nama;
+        $barang->harga = $harga;
+        $barang->stok = $stok;
+        $barang->merk = $merk;
+        $barang->deskripsi_singkat = $d_singkat;
+        $barang->deskripsi  = $d;
+        $barang->keterangan_gambar = $k_gambar;
+        $barang->keterangan_varian = $k_varian;
+        $barang->save();
+        
+        //Barang::where('id',$id)->
+        //$barang = Barang::where('id',$id)->get();
+        return redirect()->route('admin.produk');
+    }
 }

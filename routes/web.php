@@ -41,6 +41,12 @@ Route::get('/admin/laporan',[PageController::class, 'laporan'])->name('admin.lap
 
 Route::get('/admin/data',[PageController::class, 'data_admin'])->name('admin.data');
 
+Route::get('/admin/detail_barang',[PageController::class, 'detail_barang'])->name('admin.detail_barang');
+
+Route::get('/admin/edit_barang/{id}',[PageController::class, 'edit_barang'])->name('admin.edit_barang');
+
+Route::PUT('/admin/simpan_edit_barang/{id}',[PageController::class, 'simpan_edit_barang'])->name('admin.simpan_edit_barang');
+
 Route::group(['middleware' => ['auth']], function(){
     Route::group(['middleware' => ['cek_login:admin']], function(){
         Route::get('/admin',[PageController::class, 'admin'])->name('admin');

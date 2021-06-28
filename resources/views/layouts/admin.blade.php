@@ -56,9 +56,7 @@
     
       @yield('footer')
 
-      <div class="copyright text-center text-white font-weight-bold bg-warning p-1 position-absolute bottom-0 start-50 translate-middle-x w-100">
-          <p>Developed by INLUK Copyright <i class="far fa-copyright "></i> 2021</p>
-      </div>
+      
 
     <!-- Optional JavaScript; choose one of the two! -->
 

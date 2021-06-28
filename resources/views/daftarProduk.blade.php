@@ -35,7 +35,7 @@
                 <td>{{ $barang->stok }}</td>
                 <td>
                     <a class="mx-2" href="#"><i class="far fa-eye" style="color:blue;"></i></a>
-                    <a class="mx-2" href="#"><i class="fas fa-pen" style="color:orange;"></i></a>
+                    <a class="mx-2" href="{{ route('admin.edit_barang', $barang->id) }}"><i class="fas fa-pen" style="color:orange;"></i></a>
                     <a class="mx-2" href="#"><i class="fas fa-trash" style="color:red;"></i></a>
                 </td>
             </tr>
