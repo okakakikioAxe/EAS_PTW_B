@@ -61,9 +61,7 @@
                     @method('POST')
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Upload bukti transfer</label>
-                        
                         <input type="hidden" name="total_harga" id="total_harga" value="{{ $total_harga }}">
-                        <input type="hidden" name="id_transaksi" id="id_transaksi" value="{{ $id_transaksi }}">
                         <input class="form-control" type="file" id="image" name="image" required> 
                     </div>
                     <br>
