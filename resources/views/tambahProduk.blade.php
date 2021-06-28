@@ -79,7 +79,7 @@
                         <input type="file" name="gambar_5" class="form-control" placeholder="gambar 5">
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary w-100">Simpan</button>
+                    <button type="submit" onclick="return confirm('apakah data tersebut sudah benar?');" class="btn btn-primary w-100">Simpan</button>
                 </form>
                 
             </div>

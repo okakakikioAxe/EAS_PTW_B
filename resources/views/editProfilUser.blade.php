@@ -11,9 +11,11 @@
 <br>
 <br>
     <div class="container">
+    <a class="btn btn-success text-right" href="{{ route('user.index') }}" role="button">Kembali</a>
         <div class="row">
             <div class="col"></div>
             <div class="col-5">
+                
                 <h3 class="text-center">Edit Profil</h3>
                 @foreach ($user as $user)
                 <form action="{{ route('user.update',session()->get('id')) }}" method='post'>

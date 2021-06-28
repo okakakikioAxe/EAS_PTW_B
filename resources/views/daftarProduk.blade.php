@@ -8,6 +8,15 @@
 
 @section('konten')
 <div class="container">
+@if(session()->has('message'))
+    <div class="container">
+    <div class="alert {{ session()->get('message2') }} alert-dismissible fade show" role="alert">
+        {{ session()->get('message') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    </div>
+@endif
+<br>
     <h3 class="text-center">DAFTAR PRODUK</h3>
     <a class="btn btn-primary float-end" href="{{ route('admin.form_tambah_barang') }}" role="button">Tambah +</a>
 </div>
@@ -36,7 +45,7 @@
                 <td>
                     <a class="mx-2" href="{{ route('admin.lihat_barang', $barang->id) }}"><i class="far fa-eye" style="color:blue;"></i></a>
                     <a class="mx-2" href="{{ route('admin.edit_barang', $barang->id) }}"><i class="fas fa-pen" style="color:orange;"></i></a>
-                    <a class="mx-2" href="#"><i class="fas fa-trash" style="color:red;"></i></a>
+                    <a class="mx-2" href="{{ route('admin.hapus_barang', $barang->id) }}" onclick="return confirm('apakah anda yakin ingin menghapus data ini?');"><i class="fas fa-trash" style="color:red;"></i></a>
                 </td>
             </tr>
         @endforeach

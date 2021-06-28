@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Barang;
 use App\Models\Transaksi;
 use App\Models\User;
+use App\Models\Keranjang;
 
 class PageController extends Controller
 {
@@ -265,7 +266,7 @@ class PageController extends Controller
         }
         $barang->save();
 
-        return redirect()->route('admin.produk');
+        return redirect()->route('admin.produk')->with('message', 'Produk berhasil ditambahkan')->with('message2','alert-success');
     }
 
     public function simpan_edit_barang(Request $request,$id)
@@ -300,5 +301,13 @@ class PageController extends Controller
     {
         $barang = Barang::where('id',$id)->get();
         return view('lihatProduk',['barang' => $barang]);
+    }
+
+    public function hapus_barang($id)
+    {
+        Keranjang::where('id_barang',$id)->delete();
+        Barang::where('id',$id)->delete();
+        return redirect()->route('admin.produk')->with('message', 'Produk berhasil dihapus')->with('message2','alert-success');
+        //return view('lihatProduk',['barang' => $barang]);
     }
 }

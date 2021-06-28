@@ -47,6 +47,8 @@ Route::get('/admin/detail_barang',[PageController::class, 'detail_barang'])->nam
 
 Route::get('/admin/edit_barang/{id}',[PageController::class, 'edit_barang'])->name('admin.edit_barang');
 
+Route::get('/admin/hapus_barang/{id}',[PageController::class, 'hapus_barang'])->name('admin.hapus_barang');
+
 Route::get('/admin/lihat_barang/{id}',[PageController::class, 'lihat_barang'])->name('admin.lihat_barang');
 
 Route::get('/admin/form/tambah_barang',[PageController::class, 'form_tambah_barang'])->name('admin.form_tambah_barang');
