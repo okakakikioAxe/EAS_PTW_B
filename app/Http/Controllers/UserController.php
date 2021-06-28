@@ -50,6 +50,7 @@ class UserController extends Controller
         $nama = $request->nama;
         $email = $request->email;
         $password = $request->password;
+        $tanggal_lahir = date('Y-m-d');
         $password_confirmed = $request->password_confirmed;
 
         $arr = explode(' ',trim($nama));
@@ -77,6 +78,9 @@ class UserController extends Controller
                 $User->nama_user = $nama;
                 $User->username = $username;
                 $User->email = $email;
+                $User->tanggal_lahir = $tanggal_lahir;
+                $User->alamat = "default";
+                $User->kelamin = "-";
                 $User->password = bcrypt($password);
                 $User->level = 'pembeli';
                 $User->save();
@@ -87,23 +91,30 @@ class UserController extends Controller
                     ]);
             
                     $credentials = $request->only('email', 'password');
-            
+
                     if (Auth::attempt($credentials)) {
-            
+
                         $user = Auth::user();
                         if ($user->level == 'admin') {
+                            $request->session()->put('username',$user->username);
+                            $request->session()->put('nama',$user->nama_user);
+                            $request->session()->put('id',$user->id);
+                            $request->session()->put('level',$user->level);
                             return redirect()->intended('/admin');
                         } elseif ($user->level == 'pembeli') {
+                            $request->session()->put('username',$user->username);
+                            $request->session()->put('id',$user->id);
+                            $request->session()->put('level',$user->level);
                             return redirect()->intended('/home');
                         }
                         return redirect()->intended('/form/login');
                     }
                     return redirect('/form/login');
-            }
-        }
-        else{
-            return back()->withInput();
-        }
+                        }
+                    }
+                    else{
+                        return back()->withInput();
+                    }
         
 
     }

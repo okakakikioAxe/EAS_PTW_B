@@ -5,6 +5,8 @@
 @section('konten')
 <div class="container">
     <h3 class="text-center">DATA ADMIN</h3>
+    <br>
+    <a class="btn btn-primary text-right" href="{{ route('admin.form_tambah_admin') }}" role="button">Tambah +</a>
 </div>
 <br>
 

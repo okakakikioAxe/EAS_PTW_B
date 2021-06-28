@@ -49,6 +49,10 @@ Route::get('/admin/edit_barang/{id}',[PageController::class, 'edit_barang'])->na
 
 Route::get('/admin/lihat_barang/{id}',[PageController::class, 'lihat_barang'])->name('admin.lihat_barang');
 
+Route::get('/admin/form/tambah_admin',[PageController::class, 'form_tambah_admin'])->name('admin.form_tambah_admin');
+
+Route::post('/admin/tambah_admin',[PageController::class, 'tambah_admin'])->name('admin.tambah_admin');
+
 Route::PUT('/admin/simpan_edit_barang/{id}',[PageController::class, 'simpan_edit_barang'])->name('admin.simpan_edit_barang');
 
 Route::group(['middleware' => ['auth']], function(){

@@ -103,6 +103,61 @@ class PageController extends Controller
         return view('dataAdmin', ['user' => $user]);
     }
 
+    public function form_tambah_admin()
+    {
+        
+        return view('tambahAdmin');
+    }
+
+    public function tambah_admin(Request $request)
+    {
+        $nama = $request->nama;
+        $email = $request->email;
+        $no_telepon = $request->no_telepon;
+        $kelamin = $request->kelamin;
+        $tanggal_lahir = $request->tanggal_lahir;
+        //$tanggal_lahir = str_replace('/', '-', $tanggal_lahir);
+        $alamat = $request->alamat;
+        $pw1 = $request->pw1;
+        $pw2 = $request->pw2;
+
+        $arr = explode(' ',trim($nama));
+        $username = $arr[0].rand(1,100);
+
+        function cekUsername($usernamenya, $arr){
+            $Username = User::where('username', $usernamenya)->first();
+            if ($Username === null) {
+                return $usernamenya;
+            }
+            else{
+                $arr = explode(' ',trim($nama));
+                $username = $arr[0].rand(1,100);
+                cekUsername($username);
+            }
+        }
+        
+        if($pw1 == $pw2){
+            $user = new User;  
+            $user->nama_user = $nama;
+            $user->username = $username;
+            $user->email = $email;
+            $user->no_telepon = $no_telepon;
+            $user->kelamin = $kelamin;
+            $user->tanggal_lahir = $tanggal_lahir;
+            $user->alamat = $alamat;
+            $user->level = 'admin';
+            $user->password = bcrypt($pw1);
+            $user->save();
+            return redirect()->route('admin.data');
+        }
+        else{
+            return back()->withInput();
+        }
+
+        //$user  = new User;
+        //return redirect()->route('admin.data');
+    }
+
     public function edit_barang($id)
     {
         $barang = Barang::where('id',$id)->get();
